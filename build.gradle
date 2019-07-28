@@ -82,7 +82,7 @@ springBoot {
 }
 
 bootJar {
-	baseName "skeleton"
+	baseName "api"
 	launchScript()
 }
 
