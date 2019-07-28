@@ -1,4 +1,7 @@
 # it-java-api-skeleton
+
+[![Build Status](https://travis-ci.org/ciandt-dev/it-java-api-skeleton.svg?branch=master)](https://travis-ci.org/ciandt-dev/it-java-api-skeleton)
+
 CI&amp;T IT's default Java project skeleton for Microservices and APIs
 
 ## Pre-requisites
@@ -28,7 +31,7 @@ Arguments:
 ## Dependency Check
 Run the following comand and check the report: "build/reports/dependency-check-report.html"
 
-```shell
+```shell~~~~
 ./gradlew dependencyCheckAnalyze --info
 ```
 
