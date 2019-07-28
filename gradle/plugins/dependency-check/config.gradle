@@ -1,0 +1,26 @@
+dependencyCheck {
+    autoUpdate=true
+    suppressionFile = 'gradle/plugins/dependency-check/suppressions.xml'
+    format='HTML'
+    failBuildOnCVSS=10
+    failOnError=true
+    analyzers {
+        experimentalEnabled = true
+        archiveEnabled = true
+        jarEnabled = true
+        centralEnabled = true
+        nexusEnabled = true
+        pyDistributionEnabled = false
+        pyPackageEnabled = false
+        rubygemsEnabled = false
+        opensslEnabled = false
+        nuspecEnabled = false
+        assemblyEnabled = false
+        cmakeEnabled = false
+        autoconfEnabled = true
+        composerEnabled = false
+        nodeEnabled = true
+        cocoapodsEnabled = false
+        swiftEnabled = false
+    }
+}
