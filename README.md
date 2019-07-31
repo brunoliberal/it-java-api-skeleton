@@ -3,7 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d74b7535bb984aa8a82c9aa4aab167f7)](https://app.codacy.com/app/marcosvidolin/it-java-api-skeleton?utm_source=github.com&utm_medium=referral&utm_content=ciandt-dev/it-java-api-skeleton&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/ciandt-dev/it-java-api-skeleton.svg?branch=master)](https://travis-ci.org/ciandt-dev/it-java-api-skeleton)
 
-CI&amp;T IT's default Java project skeleton for Microservices and APIs
+CI&amp;T IT's default Java project skeleton for Microservices and APIs (with basic example)
 
 ### Pre-requisites
 
