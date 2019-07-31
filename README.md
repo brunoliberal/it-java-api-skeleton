@@ -13,20 +13,32 @@ CI&amp;T IT's default Java project skeleton for Microservices and APIs
 
 ### Packages
 
-**com.ciandt.skeleton.core** 
-**com.ciandt.skeleton.core.domain** 
-**com.ciandt.skeleton.core.business** 
-**com.ciandt.skeleton.core.exception** 
-**com.ciandt.skeleton.core.enumeration** 
+**com.ciandt.skeleton.core**
 
-**com.ciandt.skeleton.service** 
-**com.ciandt.skeleton.repository** 
-**com.ciandt.skeleton.util** 
+**com.ciandt.skeleton.core.domain**
 
-**com.ciandt.skeleton.web.rest.v1** 
-**com.ciandt.skeleton.web.rest.v1.resource** 
-**com.ciandt.skeleton.web.rest.v1.assembler** 
-**com.ciandt.skeleton.web.rest.v1.controller** 
+**com.ciandt.skeleton.core.business**
+
+**com.ciandt.skeleton.core.exception**
+
+**com.ciandt.skeleton.core.enumeration**
+
+
+**com.ciandt.skeleton.service**
+
+**com.ciandt.skeleton.repository**
+
+**com.ciandt.skeleton.util**
+
+
+**com.ciandt.skeleton.web.rest.v1**
+
+**com.ciandt.skeleton.web.rest.v1.resource**
+
+**com.ciandt.skeleton.web.rest.v1.assembler**
+
+**com.ciandt.skeleton.web.rest.v1.controller**
+
 
 
 ### Profiles
