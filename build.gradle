@@ -27,6 +27,7 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 ext {
@@ -45,10 +46,8 @@ dependencies {
 
 	compile('com.h2database:h2:1.4.199')
 
-//    compile('org.springframework.cloud:spring-cloud-starter-config')
-//	compile files('lib/ojdbc7.jar')
-
-	// lombok
+	// Utils
+	compile 'com.vidolima:copy-properties-assembler:v1.0.0'
 	compileOnly('org.projectlombok:lombok:1.18.8')
 
 	// Swagger

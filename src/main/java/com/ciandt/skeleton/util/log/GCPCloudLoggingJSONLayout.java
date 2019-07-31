@@ -1,18 +1,17 @@
 package com.ciandt.skeleton.util.log;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.PatternLayout;
-import ch.qos.logback.classic.spi.ILoggingEvent;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.util.Map;
-
 import static ch.qos.logback.classic.Level.DEBUG_INT;
 import static ch.qos.logback.classic.Level.ERROR_INT;
 import static ch.qos.logback.classic.Level.INFO_INT;
 import static ch.qos.logback.classic.Level.TRACE_INT;
 import static ch.qos.logback.classic.Level.WARN_INT;
+
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.PatternLayout;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Map;
 
 /**
  * GKE fluentd ingestion detective work:
