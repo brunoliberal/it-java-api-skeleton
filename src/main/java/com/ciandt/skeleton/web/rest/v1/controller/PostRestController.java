@@ -2,7 +2,9 @@ package com.ciandt.skeleton.web.rest.v1.controller;
 
 import com.ciandt.skeleton.core.business.PostBusiness;
 import com.ciandt.skeleton.core.domain.Post;
+import com.ciandt.skeleton.web.rest.v1.assembler.PostAssembler;
 import com.ciandt.skeleton.web.rest.v1.resource.PostResource;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,7 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Rest controller that specifies the {@link Post} operations trow HTTP rest.
+ * REST controller that specifies the {@link Post} operations through HTTP REST.
+ *
  * @author mvidolin
  * @since Jul 31, 2019
  */
@@ -20,19 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostRestController extends RestControllerBase {
 
   private PostBusiness postBusiness;
+  private PostAssembler postAssembler;
 
   @Autowired
-  public PostRestController(PostBusiness postBusiness) {
+  public PostRestController(PostBusiness postBusiness, PostAssembler postAssembler) {
     this.postBusiness = postBusiness;
-  }
-
-  /**
-   * Creates a {@link Post}.
-   * @return ResponseEntity {@link PostResource}
-   */
-  @PostMapping(path = "/posts")
-  public ResponseEntity create(PostResource resource) {
-    return null;
+    this.postAssembler = postAssembler;
   }
 
   /**
@@ -40,8 +36,20 @@ public class PostRestController extends RestControllerBase {
    * @return ResponseEntity {@link PostResource}
    */
   @GetMapping(path = "/posts/{id}")
-  public ResponseEntity get() {
-    return null;
+  public ResponseEntity get(Long code) {
+    Post post = this.postBusiness.findPostById(code);
+    return ResponseEntity.ok(this.postAssembler.fromDomain(post));
+  }
+
+  /**
+   * Creates a {@link Post}.
+   * @return ResponseEntity {@link PostResource}
+   */
+  @PostMapping(path = "/posts")
+  public ResponseEntity create(@Valid PostResource resource) {
+    Post domain = this.postAssembler.fromResource(resource);
+    Post post = this.postBusiness.create(domain);
+    return ResponseEntity.ok(this.postAssembler.fromDomain(post));
   }
 
   /**
@@ -49,16 +57,19 @@ public class PostRestController extends RestControllerBase {
    * @return ResponseEntity {@link PostResource}
    */
   @PutMapping(path = "/posts/{id}")
-  public ResponseEntity update(PostResource resource) {
-    return null;
+  public ResponseEntity update(@Valid PostResource resource) {
+    Post domain = this.postAssembler.fromResource(resource);
+    Post post = this.postBusiness.update(domain);
+    return ResponseEntity.ok(this.postAssembler.fromDomain(post));
   }
 
   /**
    * Deletes a {@link Post}.
    */
   @DeleteMapping(path = "/posts/{id}")
-  public ResponseEntity delete(PostResource resource) {
-    return null;
+  public void delete(@Valid PostResource resource) {
+    Post post = this.postAssembler.fromResource(resource);
+    this.postBusiness.delete(post);
   }
 
 }

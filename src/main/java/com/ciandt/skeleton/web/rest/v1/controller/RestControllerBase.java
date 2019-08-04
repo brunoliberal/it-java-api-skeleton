@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Base rest controller. Defines the base path and the media type.
+ *
  * @author mvidolin
  * @since Jul 31, 2019
  */

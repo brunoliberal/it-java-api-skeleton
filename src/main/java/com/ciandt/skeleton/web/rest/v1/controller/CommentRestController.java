@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * REST controller that specifies the {@link Comment} operations through HTTP REST.
+ *
+ * @author mvidolin
+ * @since Jul 31, 2019
+ */
 @RestController
 public class CommentRestController extends RestControllerBase {
 
