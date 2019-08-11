@@ -11,6 +11,13 @@ CI&amp;T IT's default Java project skeleton for Microservices and APIs (with bas
 - Gradle >= 2
 - [Lombok](https://projectlombok.org/download.html)
 
+### Stack
+
+- Spring Boot
+- Spring MVC
+- Spring Data
+- Docker
+
 ### Packages
 
 **com.ciandt.skeleton.core**
@@ -71,6 +78,11 @@ Run the following comand and check the report: "build/reports/dependency-check-r
 ```shell~~~~
 ./gradlew dependencyCheckAnalyze --info
 ```
+
+### Relational Database Pattern
+
+You can find [here](DATABASE_PATTERN.md) all the object name pattern to create tables, columns, triggers, functions and others. 
+Please check the documentation.
 
 ### Contributors
 [![](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/images/0)](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/links/0)[![](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/images/1)](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/links/1)[![](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/images/2)](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/links/2)[![](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/images/3)](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/links/3)[![](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/images/4)](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/links/4)[![](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/images/5)](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/links/5)[![](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/images/6)](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/links/6)[![](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/images/7)](https://sourcerer.io/fame/marcosvidolin/ciandt-dev/it-java-api-skeleton/links/7)
