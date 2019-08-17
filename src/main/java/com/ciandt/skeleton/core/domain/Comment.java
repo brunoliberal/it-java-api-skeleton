@@ -1,6 +1,6 @@
 package com.ciandt.skeleton.core.domain;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -38,9 +40,19 @@ public class Comment {
   @CreationTimestamp
   @Temporal(TemporalType.TIMESTAMP)
   @Column(name = "COMM_DT_CREATE")
-  private Date publishedAt;
+  private LocalDateTime publishedAt;
 
   @Column(name = "COMM_TX_TEXT")
   private String text;
+
+  @PrePersist
+  public void prePersist() {
+    this.publishedAt = LocalDateTime.now();
+  }
+
+  @PreUpdate
+  public void preUpdate() {
+    this.publishedAt = LocalDateTime.now();
+  }
 
 }

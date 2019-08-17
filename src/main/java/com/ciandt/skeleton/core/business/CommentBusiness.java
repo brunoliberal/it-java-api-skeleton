@@ -1,6 +1,7 @@
 package com.ciandt.skeleton.core.business;
 
 import com.ciandt.skeleton.core.domain.Comment;
+import com.ciandt.skeleton.core.domain.Post;
 import com.ciandt.skeleton.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -25,12 +26,12 @@ public class CommentBusiness {
   }
 
   /**
-   * Finds a {@link Comment} by id (code).
-   * @param code
+   * Finds a {@link Comment} by a given {@link Post}.
+   * @param post
    * @return comment
    */
-  public Comment findById(Long code) {
-    return this.commentService.findById(code);
+  public Comment findByPost(final Post post) {
+    return this.commentService.findByPost(post);
   }
 
   // TODO: find by post

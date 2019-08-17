@@ -2,6 +2,7 @@
 .gradle
 /build/
 .vscode/
+out/
 
 # Eclipse
 # -------
@@ -30,7 +31,8 @@ atlassian-ide-plugin.xml
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
-.mtj.tmp/
+.mtj
+.tmp/
 
 # Package Files #
 *.war
