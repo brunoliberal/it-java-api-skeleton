@@ -1,7 +1,10 @@
 package com.ciandt.skeleton.web.rest.v1.controller;
 
+import com.ciandt.skeleton.core.business.CommentBusiness;
 import com.ciandt.skeleton.core.domain.Comment;
+import com.ciandt.skeleton.web.rest.v1.assembler.CommentAssembler;
 import com.ciandt.skeleton.web.rest.v1.resource.CommentResource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,22 +21,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CommentRestController extends RestControllerBase {
 
+  private CommentBusiness commentBusiness;
+  private CommentAssembler commentAssembler;
+
+  @Autowired
+  public CommentRestController(CommentBusiness commentBusiness, CommentAssembler commentAssembler) {
+    this.commentBusiness = commentBusiness;
+    this.commentAssembler = commentAssembler;
+  }
+
   /**
    * Creates a {@link Comment}.
    * @return ResponseEntity {@link CommentResource}
    */
   @PostMapping(path = "/comments")
   public ResponseEntity create(CommentResource resource) {
-    return null;
-  }
-
-  /**
-   * Gets a {@link Comment}.
-   * @return ResponseEntity {@link CommentResource}
-   */
-  @GetMapping(path = "/comments/{id}")
-  public ResponseEntity get() {
-    return null;
+    Comment domain = this.commentAssembler.fromResource(resource);
+    Comment comment = this.commentBusiness.create(domain);
+    return ResponseEntity.ok(this.commentAssembler.fromDomain(comment));
   }
 
   /**
@@ -42,7 +47,9 @@ public class CommentRestController extends RestControllerBase {
    */
   @PutMapping(path = "/comments/{id}")
   public ResponseEntity update(CommentResource resource) {
-    return null;
+    Comment domain = this.commentAssembler.fromResource(resource);
+    Comment comment = this.commentBusiness.update(domain);
+    return ResponseEntity.ok(this.commentAssembler.fromDomain(comment));
   }
 
   /**
