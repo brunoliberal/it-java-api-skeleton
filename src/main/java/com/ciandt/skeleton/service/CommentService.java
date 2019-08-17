@@ -1,7 +1,9 @@
 package com.ciandt.skeleton.service;
 
 import com.ciandt.skeleton.core.domain.Comment;
+import com.ciandt.skeleton.core.domain.Post;
 import com.ciandt.skeleton.repository.CommentRepository;
+import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,12 +27,12 @@ public class CommentService {
   }
 
   /**
-   * Finds a {@link Comment} by id (code).
-   * @param code
-   * @return comment
+   * Finds all {@link Comment}s by a given {@link Post}.
+   * @param post
+   * @return comments
    */
-  public Comment findById(Long code) {
-    return this.commentRepository.getOne(code);
+  public Collection<Comment> findByPost(final Post post) {
+    return this.commentRepository.findByPost(post);
   }
 
   /**
@@ -40,6 +42,10 @@ public class CommentService {
    */
   @Transactional
   public Comment create(Comment comment) {
+    // check "code" to ensure a creation (this is a infra check not a business validation).
+    if (comment.getCode() != null) {
+      throw new IllegalArgumentException("This comment could not be created. The comment already have a code.");
+    }
     return this.commentRepository.save(comment);
   }
 
@@ -50,6 +56,10 @@ public class CommentService {
    */
   @Transactional
   public Comment update(Comment comment) {
+    // check "code" to ensure an update (this is a infra check not a business validation).
+    if (comment.getCode() == null) {
+      throw new IllegalArgumentException("This comment could not be updated. The comment have no code.");
+    }
     return this.commentRepository.save(comment);
   }
 
