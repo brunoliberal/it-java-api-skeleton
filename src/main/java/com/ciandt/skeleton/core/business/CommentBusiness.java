@@ -1,7 +1,6 @@
 package com.ciandt.skeleton.core.business;
 
 import com.ciandt.skeleton.core.domain.Comment;
-import com.ciandt.skeleton.core.domain.Post;
 import com.ciandt.skeleton.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,17 +23,6 @@ public class CommentBusiness {
   public CommentBusiness(CommentService commentService) {
     this.commentService = commentService;
   }
-
-  /**
-   * Finds a {@link Comment} by a given {@link Post}.
-   * @param post
-   * @return comment
-   */
-  public Comment findByPost(final Post post) {
-    return this.commentService.findByPost(post);
-  }
-
-  // TODO: find by post
 
   /**
    * Creates a {@link Comment}.
@@ -64,6 +52,5 @@ public class CommentBusiness {
   public void delete(Comment comment) {
     this.commentService.delete(comment);
   }
-
 
 }

@@ -1,9 +1,7 @@
 package com.ciandt.skeleton.service;
 
 import com.ciandt.skeleton.core.domain.Comment;
-import com.ciandt.skeleton.core.domain.Post;
 import com.ciandt.skeleton.repository.CommentRepository;
-import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,15 +22,6 @@ public class CommentService {
   @Autowired
   public CommentService(CommentRepository commentRepository) {
     this.commentRepository = commentRepository;
-  }
-
-  /**
-   * Finds all {@link Comment}s by a given {@link Post}.
-   * @param post
-   * @return comments
-   */
-  public Collection<Comment> findByPost(final Post post) {
-    return this.commentRepository.findByPost(post);
   }
 
   /**
