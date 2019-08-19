@@ -36,12 +36,15 @@ public class CommentBusiness {
 
   /**
    * Updates a {@link Comment}.
+   * @param code
    * @param comment
    * @return comment
    */
   @Transactional
-  public Comment update(Comment comment) {
-    return this.commentService.update(comment);
+  public Comment update(Long code, Comment comment) {
+    Comment tobeUpdated = this.commentService.findById(code);
+    tobeUpdated.applyUpdate(comment);
+    return this.commentService.update(tobeUpdated);
   }
 
   /**

@@ -25,6 +25,15 @@ public class CommentService {
   }
 
   /**
+   * Finds a {@link Comment} by id.
+   * @param code
+   * @return
+   */
+  public Comment findById(Long code) {
+    return this.commentRepository.getOne(code);
+  }
+
+  /**
    * Creates a {@link Comment}.
    * @param comment
    * @return comment

@@ -48,7 +48,7 @@ public class CommentRestController extends RestControllerBase {
   @PutMapping(path = "/comments/{id}")
   public ResponseEntity update(@PathVariable Long id, CommentResource resource) {
     Comment domain = this.commentAssembler.fromResource(resource);
-    Comment comment = this.commentBusiness.update(domain);
+    Comment comment = this.commentBusiness.update(id, domain);
     return ResponseEntity.ok(this.commentAssembler.fromDomain(comment));
   }
 

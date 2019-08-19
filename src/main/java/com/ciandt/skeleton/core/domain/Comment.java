@@ -55,4 +55,12 @@ public class Comment {
     this.publishedAt = new Date();
   }
 
+  /**
+   * Updates the current Comment with the new values.
+   * @param comment
+   */
+  public void applyUpdate(final Comment comment) {
+    this.text = comment.getText();
+  }
+
 }
