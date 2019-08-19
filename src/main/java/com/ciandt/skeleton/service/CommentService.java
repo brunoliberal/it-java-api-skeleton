@@ -54,11 +54,11 @@ public class CommentService {
 
   /**
    * Deletes a {@link Comment}.
-   * @param comment
+   * @param code
    */
   @Transactional
-  public void delete(Comment comment) {
-    this.commentRepository.delete(comment);
+  public void delete(Long code) {
+    this.commentRepository.deleteById(code);
   }
 
 }

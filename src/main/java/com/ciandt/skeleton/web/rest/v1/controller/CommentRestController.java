@@ -7,6 +7,7 @@ import com.ciandt.skeleton.web.rest.v1.resource.CommentResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,8 +34,8 @@ public class CommentRestController extends RestControllerBase {
    * Creates a {@link Comment}.
    * @return ResponseEntity {@link CommentResource}
    */
-  @PostMapping(path = "/comments")
-  public ResponseEntity create(CommentResource resource) {
+  @PostMapping(path = "/posts/{id}/comments")
+  public ResponseEntity create(@PathVariable Long id, CommentResource resource) {
     Comment domain = this.commentAssembler.fromResource(resource);
     Comment comment = this.commentBusiness.create(domain);
     return ResponseEntity.ok(this.commentAssembler.fromDomain(comment));
@@ -45,7 +46,7 @@ public class CommentRestController extends RestControllerBase {
    * @return ResponseEntity {@link CommentResource}
    */
   @PutMapping(path = "/comments/{id}")
-  public ResponseEntity update(CommentResource resource) {
+  public ResponseEntity update(@PathVariable Long id, CommentResource resource) {
     Comment domain = this.commentAssembler.fromResource(resource);
     Comment comment = this.commentBusiness.update(domain);
     return ResponseEntity.ok(this.commentAssembler.fromDomain(comment));
@@ -55,8 +56,9 @@ public class CommentRestController extends RestControllerBase {
    * Deletes a {@link Comment}.
    */
   @DeleteMapping(path = "/comments/{id}")
-  public ResponseEntity delete(CommentResource resource) {
-    return null;
+  public ResponseEntity delete(@PathVariable Long id) {
+    commentBusiness.delete(id);
+    return ResponseEntity.noContent().build();
   }
 
 }
