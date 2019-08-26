@@ -1,4 +1,4 @@
-FROM vidolin/openjdk:11-jre-tz-alpine
+FROM vidolin/openjdk:11-jre-tz-slim
 
 ENV SPRING_PROFILE=notset
 
