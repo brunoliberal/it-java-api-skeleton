@@ -64,4 +64,14 @@ public class PostBusiness {
     this.postService.delete(post);
   }
 
+  /**
+   * Cheks if the given {@link Post} exist.
+   * @param postId
+   */
+  public void checkExist(Long postId) {
+    if (!this.postService.exists(postId)) {
+      throw new IllegalArgumentException("The given Post does not exist.");
+    }
+  }
+
 }

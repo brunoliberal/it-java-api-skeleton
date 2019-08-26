@@ -34,10 +34,10 @@ public class CommentRestController extends RestControllerBase {
    * Creates a {@link Comment}.
    * @return ResponseEntity {@link CommentResource}
    */
-  @PostMapping(path = "/posts/{id}/comments")
-  public ResponseEntity create(@PathVariable Long id, CommentResource resource) {
+  @PostMapping(path = "/posts/{postId}/comments")
+  public ResponseEntity create(@PathVariable Long postId, CommentResource resource) {
     Comment domain = this.commentAssembler.fromResource(resource);
-    Comment comment = this.commentBusiness.create(domain);
+    Comment comment = this.commentBusiness.create(postId, domain);
     return ResponseEntity.ok(this.commentAssembler.fromDomain(comment));
   }
 

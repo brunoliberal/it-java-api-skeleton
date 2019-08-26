@@ -25,6 +25,18 @@ public class PostService {
   }
 
   /**
+   * Returns whether an entity with the given id exists.
+   * @param code
+   * @return {@literal true} if an entity with the given id exists, {@literal false} otherwise.
+   */
+  public boolean exists(Long code) {
+    if (code == null || code <= 0L) {
+      return false;
+    }
+    return this.postResporitory.existsById(code);
+  }
+
+  /**
    * Finds a {@link Post} by id (code).
    * @param code
    * @return post

@@ -2,6 +2,7 @@ package com.ciandt.skeleton.core.business;
 
 import com.ciandt.skeleton.core.domain.Comment;
 import com.ciandt.skeleton.service.CommentService;
+import com.ciandt.skeleton.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,19 +19,23 @@ import org.springframework.transaction.annotation.Transactional;
 public class CommentBusiness {
 
   private CommentService commentService;
+  private PostBusiness postBusiness;
 
   @Autowired
-  public CommentBusiness(CommentService commentService) {
+  public CommentBusiness(CommentService commentService, PostBusiness postBusiness) {
     this.commentService = commentService;
+    this.postBusiness = postBusiness;
   }
 
   /**
    * Creates a {@link Comment}.
+   * @param postId
    * @param comment
    * @return comment
    */
   @Transactional
-  public Comment create(Comment comment) {
+  public Comment create(Long postId, Comment comment) {
+    this.postBusiness.checkExist(postId);
     return this.commentService.create(comment);
   }
 
