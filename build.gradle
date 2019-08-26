@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.1.6.RELEASE'
+		springBootVersion = '2.1.7.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -8,7 +8,7 @@ buildscript {
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		// https://mvnrepository.com/artifact/org.owasp/dependency-check-gradle
-		classpath "org.owasp:dependency-check-gradle:5.2.0"
+		classpath "org.owasp:dependency-check-gradle:5.2.1"
 	}
 }
 
@@ -34,7 +34,7 @@ ext {
 	springCloudVersion = 'Greenwich.RELEASE'
 }
 
-ext['tomcat.version'] = '9.0.22'
+ext['tomcat.version'] = '9.0.24'
 
 dependencies {
 
