@@ -2,7 +2,6 @@ package com.ciandt.skeleton.core.business;
 
 import com.ciandt.skeleton.core.domain.Comment;
 import com.ciandt.skeleton.service.CommentService;
-import com.ciandt.skeleton.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

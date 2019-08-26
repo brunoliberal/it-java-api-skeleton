@@ -1,7 +1,6 @@
 package com.ciandt.skeleton.service;
 
 import com.ciandt.skeleton.core.domain.Comment;
-import com.ciandt.skeleton.core.domain.Post;
 import com.ciandt.skeleton.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
