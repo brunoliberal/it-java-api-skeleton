@@ -5,7 +5,7 @@
 
 CI&amp;T IT's default Java project skeleton for Microservices and APIs (with basic example)
 
-### Pre-requisites
+### Prerequisites
 
 - Java >= 1.8
 - Gradle >= 2
