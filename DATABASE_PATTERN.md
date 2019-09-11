@@ -1,237 +1,225 @@
-# Padrão de nomenclatura de Objetos de Banco de Dados
+# Database objects naming conventions
 
-# 1. Objetivo
+# 1 Goal
 
-Estabelecer padrões de nomenclatura de objetos de banco de
-dados
+Establish database object naming standards
 
-# 2. Definições
+# 2. Definitions
 
-```
-SGBD - Sistema de Gerência de Banco de Dados
+`` `
+DBMS - Database Management System
 OLTP - On-line Transactional Processing
-```
-# 3. Objetivo
+`` `
+# 3. Objective
 
-## 3.2 Considerações gerais
+## 3.2 General Considerations
 
-Para o nome de qualquer objeto, as seguintes regras devem ser
-seguidas:
+For the name of any object, the following rules must be followed:
 
-- Deve começar com uma letra
-- Deve conter apenas alfanuméricos (A-Z,0-9) e
-“underscore” (_), considerando as limitações de tamanho
-para nomes nos ambientes utilizados.
+- Must start with a letter
+- Must contain only alphanumerics (A-Z, 0-9) and "underscore" (_), considering 
+size limitations for names in the environments used.
 
-## 3.3 Objetos Estruturais do Ambiente de Dados
+## 3.3 Data Environment Structural Objects
 
-## 3.3.1 Sistema
+## 3.3.1 System
 
-```
-<texto_significativo>, com até 10 caracteres
-```
-## 3.3.2 Banco de Dados
+`` `
+<significative_text>, up to 10 characters
+`` `
+## 3.3.2 Database
 
-```
-<texto_significativo>, considerando a limitação de tamanho
-nos ambientes utilizados
-```
+`` `
+<significative_text>, considering the size limitation in the environments used
+`` `
 ## 3.3.3 Database Link
 
-```
-<banco de dados>_<texto significativo> , onde < texto
-significativo > é opcional
-```
+`` `
+<database>_<significative_text> where <significative_text> is optional
+`` `
 Ex.: PEPRNCE, DEPWBA, BCP5_OG00_CONSULTA
 
 ## 3.3.4 Tablespace
 
-O nome da Tablespace deve ser composto por:
+The Tablespace name must consist of:
 
-**Owner_<tipo de objeto>_NN,** onde:
+**Owner_<object type>_NN,** where:
 
-- <tipo de Objeto> (opcional) pode ser: DADOS, ÍNDICES ou LOBS
+- <object type> (optional) can be: DATA, INDEX or LOBS
 
-- NN = Número seqüencial (opcional)
+- NN = Sequential Number (optional)
 
-Ex.: OG00_
+Ex .: OG00_
 
-## 3.4 Objetos de Modelo de Dados
+## 3.4 Data Model Objects
 
-## 3.4.1 Comentários
+## 3.4.1 Comments
 
-Os comentários de colunas e tabelas devem ser preenchidos
+Column and table comments must be filled
 
 Ex.:
-```sql
-COMMENT ON TABLE OWN.CLIENTE 
-IS 'Cliente que pode fazer uma compra na aplicação.'
+`` `sql
+COMMENT ON TABLE OWN.CLIENT
+IS 'Customer who can make an in-app purchase.'
 
-COMMENT ON COLUMN OWN.CLIENTE.CLIE_CD_CLIENTE 
-IS 'Codigo identificador do cliente.'
-```
+COMMENT ON COLUMN OWN.CLIENT.CLIE_CD_CLIENT
+IS 'Customer identifier code.'
+`` `
 
 ## 3.4.2 Owner
 
-**<texto_significativo>,** com até 7 caracteres
+**<significative_text>,** up to 7 characters
 
-## 3.4.3 Tabela
+## 3.4.3 Table
 
-Texto livre e significativo, observando que o nome deve estar no
-singular e, se composto por duas ou mais palavras, estas devem
-estar separadas por “underscore”:
+Free and meaningful text, noting that the name must be in singular
+and, if composed of two or more words, these might be
+separated by "underscore":
 
-**_<_** **termo1>_<termo2>_..._<termoN** **_>_**
+**_<_** **term1>_<term2>_..._<termN** **_>_**
 
-Deve ser um nome preferencialmente no masculino e em letras
-maiúsculas
+Must be a name preferably in masculine and in capital letters
 
-O termo deve possuir no mínimo 2 letras. Termo com 2 letras só
-deve ser usado se o termo já possuir uma sigla conhecida com
-este tamanho
+The term must be at least 2 letters. Terms with 2 letters only
+should be used if the term already has a known acronym with
+this size
 
-Ex.: RG/UF
+Ex .: RG / UF
 
-Não devem ser utilizados preposições e artigos na composição
-do nome.
+Prepositions and articles should not be used in the composition of the name.
 
-Evitar nomes técnicos e nomes próprios, exceto se for de grande
-conhecimento da empresa
+Avoid technical names and proper names unless it is well-known in the company
 
-Ex.: SALDO_FGTS, FOLHA_FERIAS
+Ex: FGTS_BALANCE, VACATION_SHEET
 
-## 3.4.4 Visão (View)
+## 3.4.4 View
 
-**VW_<termo1>_<termo2>_..._<termoN>**
+**VW_<term1>_<term2>_..._<termN>**
 
-As colunas da visão devem possuir o mesmo nome da coluna da
-tabela de origem
+The view columns must have the same name as the source table column.
 
-## 3.4.4.1 Visão Materializada (Materialized View)
+## 3.4.4.1 Materialized View
 
-**MV_<termo1>_<termo2>_..._<termoN>**
+**MV_<term1>_<term2>_..._<termN>**
 
-As colunas da visão devem possuir o mesmo nome da coluna da
-tabela de origem
+The view columns must have the same name as the source table column.
 
-## 3.4.5 Mnemônico de Tabela
+## 3.4.5 Table Mnemonic
 
-Utilizado como prefixo do nome da coluna de uma tabela,
-conforme citado no item 3.4.6 Coluna Deve conter até quatro 
-caracteres alfanuméricos (A-Z,0-9)
+Used as a prefix to the column name of a table,
+as mentioned in item 3.4.6, Column must contain up to four
+alphanumeric characters (A-Z,0-9)
 
-Se o nome da tabela for formado por uma única palavra, usar os
-quatro primeiros caracteres
+If the table name consists of a single word, use the first four characters
 
-Ex.: EMPREGADO EMPR
+Ex .: EMPLOYEE EMPL
 
-Se o nome da tabela for formado por duas palavras, usar os dois 
-primeiros caracteres de cada uma
+If the table name is consisted of two words, use first two characters
+of both words
 
-Ex.: DM_EMPREGADO DMEM
+Ex: DM_EMPLOYEE DMEM
 
-Se o nome da tabela for formado por três palavras, usar os dois
-primeiros caracteres da primeira palavra, o primeiro caractere da
-segunda e o primeiro da terceira palavra
+If the table name consists of three words, use first two characters
+of the first word, the first character of the
+second and the first of the third word
 
-Ex.: CT_CONTROLE_RELATORIO CTCR
+Ex: CT_CONTROL_REPORT CTCR
 
-Quando o nome da tabela for formado por quatro ou mais
-palavras, usar os dois primeiros caracteres da primeira palavra,
-e para os dois caracteres restantes utilizar os primeiros
-caracteres das palavras mais significativas.
+When the table name consists of four or more
+words, use the first two characters of the first word,
+and for the remaining two characters, use the first
+characters of the most significant words.
 
-Ex.: MM_BASE_CONSULTA_ATRIBUTO_DIM MMBA
+Ex: MM_BASE_QUERY_ATTRIBUTE_DIM MMBA
 
-Caso em uma mesma base de dados o procedimento acima
-gerar abreviaturas iguais, as duplicidades devem ser resolvidas
-escolhendo-se outro modo de gerar as abreviaturas
+If in the same database the above rule
+generate equal abbreviations, duplicates must be resolved
+choosing another way to generate the abbreviations
 
-## 3.4.5.1 Mnemônico de View
+## 3.4.5.1 View Mnemonic
 
-Para colunas de view, e materialized view, que são originadas de
-uma expressão, será necessário criar um mnemônico para a
-view (materialized view). Considerar a mesma regra para
-mnemônico de tabela, desprezando o prefixo VW (MV). Ver item
-5.4.5 Mnemônico de Tabela.
+For view and materialized view columns, which originate from
+expression, it will be necessary to create a mnemonic for the
+view (materialized view). Consider the same rule for
+table mnemonic, neglecting the VW (MV) prefix. View item
+5.4.5 Table Mnemonic.
 
-Ex.: VW_PONTO_OPER POOP
+Ex. VW_POINT_OPER POOP
 
-EX.: MV_PONTO_OPER POOP
+EG: MV_POINT_OPER POOP
 
-## 3.4.6 Coluna
+## 3.4.6 Column
 
-**<mnemônico tabela>_<código da classe>_<texto
-significativo>**
+**<mnemonic table>_<class code>_<significative text>**
 
-Sobre “mnemônico tabela” ver o item 3.4.5 Mnemônico de Tabela.
+For “table mnemonic” see item 3.4.5 Table mnemonic.
 
-Para colunas de views, e também de 'materialized' views, 
-originadas de uma expressão considerar “mnemônico view” no
-lugar de “mnemônico tabela”. Ver o item 3.4.5.1 Mnemônico de View.
+For views columns, as well from materialized views,
+originated from an expression consider “mnemonic view” in the
+place of "mnemonic table". See item 3.4.5.1 View Mnemonic.
 
-Quando a coluna fizer parte de uma chave estrangeira, seu
-nome deve ser igual ao nome da coluna chave primária na
-tabela pai, inclusive o mnemônico da tabela pai:
+When the column is part of a foreign key, its
+name must be the same as the primary key column name in the
+parent table, including the parent table mnemonic:
 
-Ex.: EMPR_NR_MATRICULA (número da matrícula do empregado)
+Ex .: EMPL_NR_REGISTRATION (employee registration number)
 
-Os "códigos de classe", descritos a seguir, indicam o propósito
-de uso da coluna
+The "class codes" described below indicate the purpose
+column usage
 
-| Código da classe | Descrição   |
-|------------------|-------------|
-| CD               | Código      |
-| IN               | Indicador   |
-| NR               | Número      |
-| SG               | Sigla       |
-| TX               | Texto       |
-| DS               | Descrição   |
-| DT               | Data        |
-| MD               | Medida      |
-| PR               | Percentual  |
-| MM               | Multimidia  |
-| VL               | Valor       |
-| NM               | Nome        |
-| QN               | Quantidade  |
-| SQ               | Sequencial  |
+| Class Code | Description  |
+| ---------- | -----------  |
+| CD         | Code         |
+| IN         | Indicator    |
+| NR         | Number       |
+| AB         | Abbreviation |?
+| TX         | Text         |
+| DS         | Description  |
+| DT         | Date         |
+| MS         | Measure      |?
+| PR         | Percentage   |
+| MM         | Multimedia   |
+| VL         | Value        |
+| NM         | Name         |
+| QT         | Quantity     |
+| SQ         | Sequential   |
 
-**CD –** Código propriamente dito representando uma
-chave , identificador, tipo, classificação, categoria, nível e
-tudo que requeira decodificação (CGC, alínea, CPF,
-produto, etc.)
+**CD-** Code itself representing a
+key, identifier, type, rating, category, level and
+anything that requires decoding (CGC, point, CPF,
+product, etc.)
 
 Ex.:
-- Código/identificador/cargo
-- Código/identificador/unidade-federação
-- Código/tipo/contrato
-- Código/classificação/item-serviço
-- Código/categoria/veiculo
-- Código/nível salarial/empregado
-- Código/grau-escolaridade/empregado
+- Code/identifier/title
+- Code/identifier/federation unit
+- Code/type/contract
+- Code/classification/service item
+- Code/category/vehicle
+- Code/wage level/employee
+- Code/educational level/employee
 
-**IN –** Indicação de domínio restrito, no sentido de apontar
-(S, N), marcador (*), sinal (+,-), elemento de
-distinção(conjunto alfanumérico)
+**IN-** Restricted domain indication, in the sense of pointing
+(Y, N), marker (*), sign (+, -), element of
+distinction (alphanumeric set)
 
-Ex.: 
-- Indicador/sinal-diferencial-pressão/canhoneio
-- Indicador/status/fornecedor
-- Indicador/aditivo/contrato
+Ex.:
+- Indicator/signal-differential-pressure/cannon
+- Indicator/Status/supplier
+- Indicator/additive/contract
 
-**NR –** Numeração cardinal livre que representa uma
-seqüência ou constante
+**NR-** Free cardinal numbering representing a
+string or constant
 
-Ex.: 
-- Número/identidade/empregado
-- Número/anuênios/empregado
+Ex.:
+- Number/identity/employee
+- Number/year/employee
 
-**SG –** Abreviação ou simples conjunto de caracteres (com
-significado) que identifica objetos do mundo real
+**AB-** Abbreviation or simple character set (with
+meaning) that identifies real world objects
 
-Ex.: 
-- Sigla/estado/local-embarque
-- Sigla/identificadora/órgão
+Ex.:
+- Acronym/State/boarding place
+- Acronym/identifier/agency
 
 **TX –** Comentário livre, observação livre, explicação,
 exemplificação, significado, etc
