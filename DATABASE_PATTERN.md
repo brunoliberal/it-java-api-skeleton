@@ -221,167 +221,163 @@ Ex.:
 - Acronym/State/boarding place
 - Acronym/identifier/agency
 
-**TX –** Comentário livre, observação livre, explicação,
-exemplificação, significado, etc
+**TX-** Free Comment, Free Observation, Explanation,
+exemplification, meaning, etc.
 
-Ex.: 
-- Texto/observação/equipamento
-- Texto/explicação/processo
-- Texto/exemplificação/amostra
-- Texto/significado-avaliação/contrato
+Ex.:
+- Text/observation/equipment
+- Text/explanation/process
+- Text/exemplification/sample
+- Text/meaning-evaluation/contract
 
-**DS–** Descrição de alguma coisa ou ser, sem formato
-pré-definido e sem regras rígidas de preenchimento
+**DS-** Description of something or being, without predefined
+format and no strict padding rules
 
-Ex.: 
-- Descrição/tipo
-- Descrição/status
+Ex.:
+- Description/type
+- Description/status
 
-**DT –** Qualquer data (completa ou não) que exprime a
-data efetiva de um evento
+**DT-** Any date (complete or not) that expresses the
+effective date of an event
 
-Ex.: 
-- Data/admissão/empregado
-- Data/ano-mês-reajuste/contrato
+Ex.:
+- Date/admission/employee
+- Date/year-month-readjustment/contract
 
-**MD –** Número que exprime uma quantidade sujeita à
-medição tal como peso, capacidade, área, profundidade,
-distância, perímetro, vazão, pressão, densidade,
-velocidade, comprimento, etc
+**MS-** Number expressing a quantity subject to the
+measurement such as weight, capacity, area, depth,
+distance, perimeter, flow, pressure, density,
+speed, length, etc.
 
-Ex.: 
-- Medida/peso/equipamento
-- Medida/capacidade/tanque
-- Medida/área/campo
-- Medida/profundidade/poço
-- Medida/distância/local-entrega
-- Medida/perímetro/local
-- Medida/vazão/equipamento
-- Medida/pressão/equipamento
-- Medida/densidade/produto
-- Medida/velocidade/navio
+Ex.:
+- Measure/weight/equipment
+- Measure/capacity/tank
+- Measure/area/field
+- Measure/depth/well
+- Measure/distance/place-of-delivery
+- Measure/perimeter/location
+- Measure/flow/equipment
+- Measurement/pressure/equipment
+- Measure/density/product
+- Measure/speed/ship
 
-**PR –** Número que exprime uma percentagem ou taxa
+**PR-** Number expressing a percentage or rate.
 
-Ex.: 
-- Percentual/participação-lucro/empregado
-- Percentual/ipi/item-material
+Ex.:
+- Percentage/profit-sharing/employee
+- Percentage/ipi/item-material
 
-**MM –** Elementos multimídia como gráficos, imagens,
-sons, filmes ou animações
+**MM-** Multimedia elements such as graphics, images,
+sounds, movies or animations
 
-Ex.: 
-- Multimídia/foto/empregado
-- Multimídia/gráfico/modelo
-- Multimídia/filme/notícia
-- Multimídia/som/mensagem
+Ex.:
+- Multimedia/photo/employee
+- Multimedia/graphic/template
+- Multimedia/movie/news
+- Multimedia/sound/message
 
-**VL –** Quantitativo exclusivamente monetário que exprime
-custo, preço, pagamento, recebimento, etc
+**VL-** Only monetary amount expressing 
+cost, price, payment, receipt, etc.
 
-Ex.: 
-- Valor/unitário/item-serviço
-- Valor/fob/produto
-- Valor/total/faturamento
-- Valor/reembolso/contrato
+Ex.:
+- Value/unit/service-item
+- Value/fob/product
+- Value/total/billing
+- Value/refund/contract
 
-**NM –** Nome completo ou abreviado de pessoa física/
-jurídica ou "objeto"
+**NM-** Full or abbreviated name of individual /
+legal or "object"
 
-Ex.: 
-- Nome/completo/empregado
-- Nome/razão-social/companhia
-- Nome/estado-território/unidade-federação
+Ex.:
+- Name/full-name/employee
+- Name/corporate-name/company
+- Name/state-territory/federation-unit
 
-**QN –** Número que exprime uma quantidade obtida
-através de contagem do objeto tratado, exceto valores
-monetários e medições, ou simplesmente um quantitativo 
-acumulado
+**QT-** Number expressing a quantity obtained
+by counting the treated object except monetary 
+values and measurements, or simply a quantitative
+accumulation
 
-Ex.: 
-- Quantidade/total/embarque
-- Quantidade/estoque/produto
+Ex.:
+- Quantity/total/shipment
+- Quantity/stock/product
 
-**SQ –** Exprime campo sequencial ou auto incremento
+**SQ-** Expresses sequential field or auto increment
 
-Em relação ao "texto_signifcativo", não usá-lo de forma
-redundante com o "código da classe", como por exemplo:
+Regarding "significant_text", do not use it in a redundant
+way with "class code" such as:
 
-Ex.1: AVFI_CD_CODIGO (Tabela: AVALIACAO_FISICA)
+Ex.1: AVFI_CD_CODE (Table: PHYSICAL_EVALUATION)
 
-Ex.2: ATED_QN_QUANTIDADE (Tabela: ATIVIDADE_EDUCATIVA)
+Ex.2: ATED_QN_QUANTITY (Table: EDUCTIVE_ACTIVITY)
 
-Ex.3: FUNC_NM_NOME_PAI (Tabela: FUNCIONARIO)
+Ex.3: FUNC_NM_FATHER_NAME (Table: EMPLOYEE)
 
-Ex.4: FUNC_DT_DATA_NASCIMENTO (Tabela: FUNCIONARIO)
+Ex.4: FUNC_DT_BORN_DATE (Table: EMPLOYEE)
 
-Usar:
+Use:
 
-Ex.1: AVFI_CD_AVALIACAO (Tabela: AVALIACAO_FISICA)
+Ex.1: AVFI_CD_EVALUATION (Table: PHYSICAL EVALUATION)
 
-Ex.2: ATED_QN_CONTRATADOS (Tabela: ATIVIDADE_EDUCATIVA)
+Ex.2: ATED_QN_CONTRACTED (Table: EDUCTIVE_ACTIVITY)
 
-Ex.3: FUNC_NM_PAI (Tabela: FUNCIONARIO)
+Ex.3: FUNC_NM_FATHER (Table: EMPLOYEE)
 
-Ex.4: FUNC_DT_NASCIMENTO (Tabela: FUNCIONARIO)
+Ex.4: FUNC_DT_BORN (Table: EMPLOYEE)
 
-## 3.4.7 Restrições de Integridade (Constraints)
+## 3.4.7 Constraints
 
-## 3.4.7.1 Chave Primária (Primary Key)
+## 3.4.7.1 Primary Key
 
-Coluna ou combinação de colunas que identifica uma única linha
-em uma tabela e com os quais as demais colunas mantêm uma
-relação de dependência
+Column or column combination that identifies a single row
+in a table and with which the other columns maintain a
+dependency relationship
 
-**PK_<mnemônico tabela>**
+**PK_<mnemonic table>**
 
-Sobre “mnemônico tabela” ver o item 3.4.5 Mnemônico de
-Tabela
+For “mnemonic table” see item 3.4.5 Mnemonic of Table
 
-As colunas pertencentes à chave primária não podem possuir
-valor nulo
+Columns belonging to the primary key cannot have null value
 
-Ex.: PK_EMPR
+Ex. PK_EMPL
 
-## 3.4.7.2 Chave Estrangeira (Foreign Key)
+## 3.4.7.2 Foreign Key
 
-Coluna ou combinação de colunas definida como chave
-estrangeira, que estabelece relação com uma chave primária em
-outra ou na mesma tabela
+Column or column combination defined as foreign
+key which relates to a primary key in
+another or in the same table
 
-**FK_<mnemônico tabela pai>_<mnemônico tabela
-filho>_<texto significativo opcional>**
+**FK_<mnemonic parent table>_<mnemonic child
+table>_<optional meaningful text>**
 
-Sobre “mnemônico tabela” ver o item 3.4.5 Mnemônico de
-Tabela
+For “mnemonic table” see item 3.4.5 Mnemonic Table
 
-O “texto significativo opcional” deve ser utilizado como
-diferenciador quando houver mais de um relacionamento entre
-as duas tabelas.
+The “optional meaningful text” should be used as
+when there is more than one relationship between
+the two tables.
 
-As colunas pertencentes à chave primária não podem possuir
-valor nulo
+Columns belonging to the primary key cannot have
+null value
 
-Ex.: FK_USUA_PARE_RESPONSAVEL
+Ex .: FK_USR_RESP_PARENT
 
 ## 3.4.7.3 Unique
 
-Coluna ou combinação de colunas que identifica uma única linha
-em uma tabela. Diferentemente da chave primária, estas colunas
-não possuem um relacionamento de dependência
+Column or column combination that identifies a single row
+in a table. Unlike the primary key, these columns
+don't have a dependency relationship
 
-As colunas pertencentes à “constraint unique” podem possuir
-valor nulo
+The columns belonging to the unique constraint can have
+null value
 
-**UN_<mnemônico da tabela>_<texto significativo>**
+**UN_<table mnemonic>_<meaningful text>**
 
-Sobre “mnemônico tabela” ver o item 3.4.5 Mnemônico de
-Tabela
+For “mnemonic table” see item 3.4.5 Mnemonic Table
 
-É preferível que o “texto significativo” contenha referência às
-colunas envolvidas
+It is preferable that the “meaningful text” contains reference to
+columns involved
 
-Ex.: UN_EMPR_EMPR_NR_CGC
+Ex: UN_EMPL_EMPL_NR_CGC
 
 ## 3.4.7.4 Check
 
